@@ -46,7 +46,7 @@ HOST_KEYS = [
 
 # RSS feed parameters, change these
 FEED_TITLE       = "Ядерный Рассол Чейнджлог"
-FEED_LINK        = "https://github.com/WardexOfficial/ebengrad-2-0/"
+FEED_LINK        = "https://github.com/WardexOfficial/nuclear-pickle/"
 FEED_DESCRIPTION = "Чейнджлог на сервере: Ядерный Рассол."
 FEED_LANGUAGE    = "ru-RU"
 FEED_GUID_PREFIX = "ss14-changelog-nuclear-pickle-"
