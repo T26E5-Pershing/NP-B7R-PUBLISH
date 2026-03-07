@@ -19,6 +19,6 @@ public sealed class ThunderdomeCVars
         CVarDef.Create("thunderdome.activation.delay", Random.Shared.Next(35, 61), CVar.SERVER | CVar.REPLICATED | CVar.NOTIFY);
 
     public static readonly CVarDef<bool> ActivationDelayEnabled =
-        CVarDef.Create("thunderdome.activation.delay.enabled", false, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("thunderdome.activation.delay_enabled", false, CVar.SERVER | CVar.REPLICATED);
     // CorvaxGoob-Thunderdome-end
 }
