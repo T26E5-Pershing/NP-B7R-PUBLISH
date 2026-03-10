@@ -22,7 +22,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "http://m.cdn.wardex.space/"
+ROBUST_CDN_URL = "http://185.207.1.215:5123/"
 
 def main():
     parser = argparse.ArgumentParser()
