@@ -5,17 +5,17 @@
 # CHARON-MOD NP
 - type: entity
   id: ShipRailgunProjectileBM
-  name: M400 400mm
+  name: ent-ShipRailgunProjectileBM
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Structural: 50000
-        Blunt: 12500
-        Heat: 5000
-        Ion: 12500
+        Structural: 30000
+        Blunt: 7500
+        Heat: 3000
+        Ion: 7500
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -35,7 +35,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: PowerSink
-    totalIntensity: 280000
+    totalIntensity: 168000
     intensitySlope: 8
-    maxIntensity: 280000
+    maxIntensity: 168000
   - type: GatheringProjectile

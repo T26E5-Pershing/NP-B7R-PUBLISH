@@ -230,6 +230,7 @@ namespace Content.IntegrationTests.Tests
             "Omega",
             "Origin",
             "OriginHighPop",  // Not in pool
+            "Aspid",
             "Packed",
             "Reach",
             "Saltern",
@@ -298,6 +299,7 @@ namespace Content.IntegrationTests.Tests
               "OasisHighPop",
               "Omega",
               "Origin",
+              "Aspid",
             //"OriginHighPop",  //Not in pool
               "TestTeg",        //Dev map
             //"Train",          //Not in pool
