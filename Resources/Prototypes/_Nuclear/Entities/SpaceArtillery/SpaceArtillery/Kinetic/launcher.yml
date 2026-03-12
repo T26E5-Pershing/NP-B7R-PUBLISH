@@ -7,9 +7,9 @@
 
 - type: entity
   id: WeaponShuttleKineticBlueMagnolia
-  name: ent-WeaponShuttleKineticBlueMagnolia
+  name: M400 Blue Magnolia
   parent: BallisticArtilleryUnanchorable
-  description: ent-WeaponShuttleKineticBlueMagnolia.desc
+  description: I won't miss!
   components:
   - type: StaticPrice
     price: 40000
