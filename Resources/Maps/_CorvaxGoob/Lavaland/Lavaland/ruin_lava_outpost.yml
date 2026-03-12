@@ -584,8 +584,6 @@ entities:
     - type: FTLDrive
     - type: IFF
       flags: Hide
-- proto: ActionToggleLight
-  entities:
 - proto: AirlockAssemblyCargo
   entities:
   - uid: 625
