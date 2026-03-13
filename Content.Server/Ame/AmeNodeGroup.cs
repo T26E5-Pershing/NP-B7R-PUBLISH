@@ -182,16 +182,14 @@ public sealed class AmeNodeGroup : BaseNodeGroup
     /// </summary>
     public float CalculatePower(int fuel, int cores)
     {
-        // Balanced around a single core AME with injection level 2 producing 1.2MW. // Nuclear change power rate of AME * 10
-    }
-        // Two core with four injection is 1.5MW. Two core with two injection is 0.9MW. // Nuclear change power rate of AME * 10
-    }
+        // Balanced around a single core AME with injection level 2 producing 1.2MW.
+        // Two core with four injection is 1.5MW. Two core with two injection is 0.9MW.
 
         // Increasing core count creates diminishing returns, increasing injection amount increases
         // Unlike the previous solution, increasing fuel and cores always leads to an increase in power, even if by very small amounts.
         // Increasing core count without increasing fuel always leads to reduced power as well.
         // At 18+ cores and 2 inject, the power produced is less than 0, the Max ensures the AME can never produce "negative" power.
-        return MathF.Max(2000000f * MathF.Log10(2 * fuel * MathF.Pow(cores, (float)-0.5)), 0); // Nuclear change power rate of AME * 10
+        return MathF.Max(2000000f * MathF.Log10(2 * fuel * MathF.Pow(cores, (float)-0.5)), 0);
     }
 
     public int GetTotalStability()
