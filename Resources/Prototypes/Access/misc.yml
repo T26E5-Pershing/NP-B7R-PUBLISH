@@ -55,3 +55,48 @@
   id: General
   tags:
   - Maintenance
+
+- type: accessGroup
+  id: ExtendedAccess
+  tags:
+  - Command
+  - Cryogenics
+  - Security
+  - Detective
+  - Brig
+  - Armory
+  - Lawyer
+  - Engineering
+  - Medical
+  - Cargo
+  - Research
+  - Service
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+
+- type: accessGroup
+  id: GeneralAccess
+  tags:
+  - Security
+  - Brig
+  - Lawyer
+  - Engineering
+  - Medical
+  - Cargo
+  - Research
+  - Service
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Kitchen
+  - Chapel
+  - Hydroponics

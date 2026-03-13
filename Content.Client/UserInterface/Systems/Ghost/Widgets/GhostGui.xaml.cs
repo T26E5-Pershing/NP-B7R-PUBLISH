@@ -36,6 +36,7 @@ public sealed partial class GhostGui : UIWidget
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
     public event Action? GhostBarPressed; // CorvaxGoob-GhostBar
+    public event Action? ReturnToRoundPressed; // Reserve - Respawn
     public event Action? ThunderdomePressed; // Goobstation - Thunderdome
     private int _prevNumberRoles;
 
@@ -53,7 +54,8 @@ public sealed partial class GhostGui : UIWidget
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleBase.ButtonCaution);
-        GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // CorvaxGoob-GhostBar
+        // GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // CorvaxGoob-GhostBar // Reserve - Respawn
+        ReturnToRound.OnPressed += _ => ReturnToRoundPressed?.Invoke(); // Reserve - Respawn
         ThunderdomeButton.OnPressed += _ => ThunderdomePressed?.Invoke(); // Goobstation - Thunderdome
     }
 
@@ -68,7 +70,7 @@ public sealed partial class GhostGui : UIWidget
     public void Update(int? roles, bool? canReturnToBody, bool? canEnterGhostBar = true, bool? canTakeGhostRoles = true)
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
-        GhostBarButton.Disabled = !canEnterGhostBar ?? true; // CorvaxGoob-GhostBar
+        // GhostBarButton.Disabled = !canEnterGhostBar ?? true; // CorvaxGoob-GhostBar // Reserve - Respawn
         // Goobstation start
         GhostRolesButton.Disabled = !canTakeGhostRoles ?? true;
         // Goobstation end
