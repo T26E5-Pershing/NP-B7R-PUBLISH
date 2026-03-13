@@ -17,6 +17,12 @@ id-card-console-window-job-title-label = Job title:
 id-card-console-window-eject-button = Eject
 id-card-console-window-insert-button = Insert
 id-card-console-window-job-selection-label = Job presets (sets department and job icon):
+id-card-console-window-actions = Actions:
+id-card-console-window-give-full-access = Give full access
+id-card-console-window-give-extended-access = Give extended access
+id-card-console-window-give-general-access = Give general access
+id-card-console-window-clear-access = Clear access
+id-card-console-window-set-job-access = Set job access
 
 access-id-card-console-component-no-hands-error = You have no hands.
 id-card-console-privileged-id = Privileged ID
