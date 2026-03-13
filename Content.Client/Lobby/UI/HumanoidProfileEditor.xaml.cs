@@ -164,7 +164,9 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Goobstation.Common.CCVar;
 using Content.Shared._CorvaxGoob.CCCVars;
+using Content.Shared.ADT.SpeechBarks;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -386,12 +388,11 @@ namespace Content.Client.Lobby.UI
             // Goob Station
             #region Barks
 
-            // CorvaxGoob-Revert : DB conflicts
-/*            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
+            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
             {
                 BarksContainer.Visible = true;
-                InitializeBarkVoice();
-            }*/
+                InitializeBarks();
+            }
 
             #endregion
 
@@ -1064,8 +1065,7 @@ namespace Content.Client.Lobby.UI
             UpdateSaveButton();
             UpdateMarkings();
             UpdateTTSVoicesControls(); // CorvaxGoob-TTS
-            // CorvaxGoob-Revert : DB conflicts
-            // UpdateBarkVoice(); // Goob Station - Barks
+            UpdateBarkVoicesControls(); // ADT Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1548,6 +1548,42 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
         // CorvaxGoob-TTS-End
+
+        // ADT Barks start
+        private void SetBarkProto(string prototype)
+        {
+            Profile = Profile?.WithBarkProto(prototype);
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkPitch(float pitch)
+        {
+            Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, BarkDefaults.MinPitch, BarkDefaults.MaxPitch));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMinVariation(float variation)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithBarkMinVariation(Math.Clamp(variation, BarkDefaults.MinDelay, Profile.Bark.MaxVar));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMaxVariation(float variation)
+        {
+            if (Profile == null)
+                return;
+
+            Profile = Profile.WithBarkMaxVariation(Math.Clamp(variation, Profile.Bark.MinVar, BarkDefaults.MaxDelay));
+            ReloadPreview();
+            SetDirty();
+        }
+        // ADT Barks end
 
         private void SetSpecies(string newSpecies)
         {
