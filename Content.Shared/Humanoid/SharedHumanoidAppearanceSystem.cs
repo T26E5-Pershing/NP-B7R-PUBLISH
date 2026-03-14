@@ -93,6 +93,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     // CorvaxGoob-TTS-End
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
     public static readonly ProtoId<BarkPrototype> DefaultBarkVoice = "Alto"; // Goob Station - Barks
+    public const string DefaultBark = "Human1"; // ADT Barks
 
     public override void Initialize()
     {
@@ -582,6 +583,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureDefaultMarkings(uid, humanoid);
         SetTTSVoice(uid, profile.Voice, humanoid); // CorvaxGoob-TTS
+        SetBarkData(uid, profile.Bark); // ADT Barks
         // CorvaxGoob-Revert : DB conflicts
         // SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
 
@@ -650,6 +652,16 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         comp.VoicePrototypeId = voiceId;
     }
     // CorvaxGoob-TTS-End
+
+    // ADT Barks start
+    public void SetBarkData(EntityUid uid, Content.Shared.ADT.SpeechBarks.BarkData data)
+    {
+        if (!TryComp<Content.Shared.ADT.SpeechBarks.SpeechBarksComponent>(uid, out var comp))
+            return;
+
+        comp.Data = data.Copy();
+    }
+    // ADT Barks end
 
     private void EnsureDefaultMarkings(EntityUid uid, HumanoidAppearanceComponent? humanoid)
     {
